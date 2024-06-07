@@ -1,6 +1,6 @@
 services: 
   backend: # first service 
-    image: parag2608/flaskapp:latest
+    image: parag2608/flaskapp:latest  # fetches image from public repo in dockerhub
     ports:
       - "5000:5000"
     environment:
