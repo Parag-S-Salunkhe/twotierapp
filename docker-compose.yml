@@ -24,7 +24,7 @@ services:
       - ./message.sql:/docker-entrypoint-initdb.d/message.sql # Mount sql script into container's /docker-entrypoint-initdb.d directory to get table automatically created
       - mysql-data:/var/lib/mysql # Mount the volume for MySQL data storage
 
-volumes:
-  mysql-data:
+volumes:      # creation of volume which is binded to your system/server/machine . even when the container goes down your data will persist. 
+  mysql-data:     # on docker container its stored in /var/lib/mysql, on your machine its stored in /var/lib/docker/volumes
 
 
