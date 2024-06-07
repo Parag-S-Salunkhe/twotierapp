@@ -3,7 +3,7 @@ services:
     image: parag2608/flaskapp:latest  # fetches image from public repo in dockerhub
     ports:
       - "5000:5000"
-    environment:
+    environment: # setting environment variables 
       MYSQL_HOST: mysql
       MYSQL_USER: admin
       MYSQL_PASSWORD: admin
