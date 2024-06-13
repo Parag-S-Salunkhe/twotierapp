@@ -5,6 +5,8 @@ FROM python:3.9-slim
 WORKDIR /app
 
 # install required packages for system
+# below line 1-2 gets OS update and isntalls it, line 3 is used to install sql libraries, line 4 deletes all lists of packages which were downloaded
+
 RUN apt-get update \
     && apt-get upgrade -y \
     && apt-get install -y gcc default-libmysqlclient-dev pkg-config \
