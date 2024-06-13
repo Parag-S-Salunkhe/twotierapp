@@ -7,11 +7,11 @@ We have a flask app where you can input data in textbox which will get stored in
 
 [Part 2](docs/Part2-KubernetesCluster.md): Exploring Kubernetes fundamental architecture and setting up a cluster on EC2 using kubeadm.
 
-[Part 3](/docs/Part3-KubernetesDeployment): Deploying containerized applications on the Kubernetes cluster.
+[Part 3](docs/Part3-KubernetesDeployment): Deploying containerized applications on the Kubernetes cluster.
 
-[Part 4](/docs/Part4-helm.md): Learning Helm and deploying applications using Helm templates.
+[Part 4](docs/Part4-helm.md): Learning Helm and deploying applications using Helm templates.
 
-[Part 5](/docs/Part5-EKSDeployment.md): Setting up and deploying applications on an EKS cluster.
+[Part 5](docs/Part5-EKSDeployment.md): Setting up and deploying applications on an EKS cluster.
 
 Using git to push every part after completion will be very helpful for github contribution 
 
