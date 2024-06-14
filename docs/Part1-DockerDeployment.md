@@ -104,7 +104,7 @@ and we are done, see if the app is running and you can see a UI and insert a mes
 
 to see the message in database on sql container. enter mysql and type select * from messages
 
-it will desplay all the message that you had inserted
+it will display all the message that you had inserted
 
 
 
