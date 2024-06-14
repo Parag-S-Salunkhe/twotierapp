@@ -32,3 +32,14 @@ Another issue yo might face is , while creating a github repository you might ad
 git pull origin master
 ```
 this is part of gitops best practices and it will keep your local files upto date and won't create a common error of 'merge conflicts' when you push to github. 
+
+if you make changes to your project and you git is also setup , just use 
+
+```
+git add filename
+git commit -m "message"
+git status
+git push
+```
+
+changing the branch and merging we will see ahead
