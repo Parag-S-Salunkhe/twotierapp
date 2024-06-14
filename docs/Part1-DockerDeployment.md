@@ -32,7 +32,7 @@ docker images prints all the images
 
 What will happen if we don't tag the docker image ? 
 
-## Making container out of images 
+## Making flask App container out of images 
 
 Making container out of image. go to [app.py](../app.py) in the last line the developers have mentioned on which port the app will be running.
 ```
@@ -45,6 +45,66 @@ docker ps shows all the containers which are running
 
 By default we don't have access to ec2 on port 5000, so we change the inbound rules in ec2 to allow on port 5000
 
-now copy the ec2 public ip, past  and add ':5000' , you'll see sql error but atleast we know our we have some app running 
+now copy the ec2 public ip, past  and add ':5000' , you'll see sql error but atleast we know our we have some app running, we need to spin up sql container
+
+## Making Sql container out of images
+
+spinning up one more container for sql database, where sql image will get pulled from dockerhub public repository
+
+```
+docker run -d -p 3306:3306 --name=mysql -e MYSQL_ROOT_PASSWORD="password" mysql:5.7
+```
+name == db name , we set root password, mysql:5.7 image gets pulled from dockerhub
+
+## connectinng both the containers in a network
+
+create a  network
+
+```
+docker network create twotiernet
+docker nnetwork ls 
+```
+
+nnow we attach both the containers to the same net id
+```
+docker ps
+docker network create networkID containerID
+```
+
+so now we have to add environment variable so we kill both containers and spin the containers again. (task - we can add environment variable to containers)
+```
+docker kill containerID
+```
+
+new command to run for bboth containers adding their environment variables abd attching them to same network. we can inspect the network
+```
+docker run -d -p 5000:5000 --network=twotiernet -e MYSQL_HOST=mysql -e MYSQL_USER=admin -e MYSQL_PASSWORD=admin -e MYSQL_DB=myDB --name=flaskapp flaskapp:latest
+
+docker run -d -p 3306:3306 --network=twotiernet -e MYSQL_DATABASE=mysql -e MYSQL_USER=admin -e MYSQL_PASSWORD=admin -e MYSQL_DB=myDB --name=mysql flaskapp:latest
+
+docker network inspect
+```
+now we will create table inside the database, the sql script is given in [message.sql](../message.sql) , create a file of message.sql as we will need it later 
+
+how to we create the table inside the container? by going inside the container!
+how do we go inside the container? see below
+```
+docker exec -it containerID bash
+my sql -u root -p
+```
+docker executes iteractive terminal (-it) as we enter the container opening bash shell, starting mysql we insert username (-u) and password (-p)
+we are inside mysql now, now we create a table inside the databe we created , our database name is 'mysql'
+
+```bash
+show databases
+```
+paste the script in [message.sql](../message.sql)  to create table
+
+and we are done, see if the app is running and you can see a UI and insert a message 
+
+to see the message in database on sql container. enter mysql and type select * from messages
+
+it will desplay all the message that you had inserted
+
 
 
