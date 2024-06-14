@@ -76,7 +76,7 @@ so now we have to add environment variable so we kill both containers and spin t
 docker kill containerID
 ```
 
-new command to run for bboth containers adding their environment variables abd attching them to same network. we can inspect the network
+new command to run for both containers adding their environment variables abd attching them to same network. we can inspect the network
 ```
 docker run -d -p 5000:5000 --network=twotiernet -e MYSQL_HOST=mysql -e MYSQL_USER=admin -e MYSQL_PASSWORD=admin -e MYSQL_DB=myDB --name=flaskapp flaskapp:latest
 
@@ -106,5 +106,5 @@ to see the message in database on sql container. enter mysql and type select * f
 
 it will display all the message that you had inserted
 
-
+Now you can set up you git repository , follow instructions at [gitREADme](gitREADme.md)
 
