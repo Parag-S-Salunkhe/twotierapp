@@ -108,3 +108,25 @@ it will display all the message that you had inserted
 
 Now you can set up you git repository , follow instructions at [gitREADme](gitREADme.md)
 
+----------------------------------------------------------------------------------------------------------------------------------------------------
+# Deployment using Docker-Compose
+Docker compose is a tool dor running multi docker container which simplifies the process and ochestrates multiple containers 
+```
+sudo apt install docker-compose
+vim docker-compose.yml
+```
+check contents and explanation of [docker-compose.yml](../docker-compose.yml) file
+
+spinning up and down of docker conatiners using
+```
+docker-compose up -d
+docker-compose down
+```
+docker compose up spins up both the containes and creates a network on its own, creates persistant volume. 
+done , check if the app is running
+-------------------------------------------------------
+
+# interesting finds
+
+- you can use 'docker ps' from anywhere in your terminal, docker-compose you should be in directory where docker-compose/yml is present. why so?whats docker daemon communication sockets?
+- where is the data stored on containers? well on the container it is stored in /var/lib/mysql , but as container storage is binded to the ec2 amchine on ec2 we can see the data is stored in /var/lib/docker/volumes
