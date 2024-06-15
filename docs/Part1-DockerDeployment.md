@@ -124,6 +124,7 @@ docker-compose down
 ```
 docker compose up spins up both the containes and creates a network on its own, creates persistant volume. 
 done , check if the app is running
+
 -------------------------------------------------------
 
 # interesting finds
