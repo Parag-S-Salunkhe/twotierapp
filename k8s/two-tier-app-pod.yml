@@ -1,0 +1,21 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: two-tier-app-pod              # these 4 lines are describing what type of service it is, in this case pod and its description
+spec:
+  containers:
+    - name: two-tier-app-ctr
+      image: parag2608/flaskapp:latest  # docker hub image that we pushed in part 1 will be pulled here from your hub repo
+      env:                                  # environment variable we assigned
+        - name: MYSQL_HOST
+          value: "mysql"
+        - name: MYSQL_USER
+          value: "admin"
+        - name: MYSQL_PASSWORD
+          value: "admin"
+        - name: MYSQL_DB
+          value: "mydb"
+      ports:
+        - containerPort: 5000        # as seen in Part 1, check the port described by developer in app.py
+      imagePullPolicy: Always
+
