@@ -38,4 +38,7 @@ after installation to see home many nodes are there use below command on master:
 kubectl get nodes
 ```
 cluster setup is done , follow next steps at [part 3](https://github.com/Parag-S-Salunkhe/twotierapp/blob/main/docs/Part3-KubernetesDeployment.md)
+
+PS - turn off instances when not in use to not incur costs.
+interesting note: you will still incur minimal storage costs, if you want to optimize the costs use terraform to spin up the architecture and destroy it after use.
 ---------
