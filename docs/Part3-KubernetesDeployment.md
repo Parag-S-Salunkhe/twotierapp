@@ -77,8 +77,9 @@ and for users to get access of app we create a Node port( generally between 3000
 
 change inbound permision to allow Node port (in my case 30007) 
 
-### persistent volume and  persistent volume claim
+### mysql deployment , persistent volume and  persistent volume claim
 
+creating [mysql deployment file](../k8s/mysql-deployment.yml)
 Create [persistent volume manifest](../k8s/mysql-pvc.yml) and [persistent volume claim](../k8s/mysql-pvc.yml)
 
 Persistent volume takes some storage from file system to give it to conatiners and app
@@ -96,7 +97,17 @@ Alternatives to host_path
 while creataing pv and pvc remember to match access modes , they should match the storage required by claim, why?
 one pv can only be binded to 1 pvc at a time.
 
-Methods like DYnamic provisioning using storage classes can be used for felxibility, scalibility and efficient use of storage resources in your kubernetes cluster (in prod)
+Methods like Dynamic provisioning using storage classes can be used for felxibility, scalibility and efficient use of storage resources in your kubernetes cluster (in prod)
 
+### creating service fo mysql
 
+the service that we created before was for application can be accessed by the outside world , now we have to create service for my sql backend so the the flask app can connect to sql 
+creation of my [sql service](../k8s/mysql-service.yml)
+apply the manifest file , to see how many services are there:
+```bash
+kubectl get service
+kubectl apply -f mysql-svc.ynl
+```
+when your sql service is up , copy the cluster ip of mysql service and go to your app deployment file where you see "MYSQL_HOST", replace it with your ip.
+to fix the error realte to table perform the same steps we followed in part 1, by entering the container in worker node
 
