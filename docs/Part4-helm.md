@@ -5,10 +5,15 @@ A package manager is a tool that automates the process of installing, upgrading,
 
 ------------------------------------------------------------------------
 **Examples of Package Managers**
+
 APT (Advanced Package Tool): Used in Debian-based systems like Ubuntu.
+
 Yum/DNF: Used in Red Hat-based systems like CentOS and Fedora.
+
 Homebrew: Used on macOS.
+
 npm: Used for JavaScript and Node.js applications.
+
 pip: Used for Python packages.
 
 ------------------------------------------------------------------------
