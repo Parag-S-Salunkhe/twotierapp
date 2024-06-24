@@ -45,3 +45,27 @@ Charts: Helm uses charts to define Kubernetes applications. Each chart contains 
 Releases: When you install a chart, Helm creates a release. A release is a specific instance of a chart running in a Kubernetes cluster.
 
 Repositories: Helm charts are stored in repositories. Helm can fetch and install charts from these repositories.
+
+## pre-requisites and installation
+
+Kubernetes cluster set up (e.g., Minikube, kind, or any cloud-based Kubernetes)
+Docker installed (Optional for custom images)
+
+installation :
+```
+curl https://baltocdn.com/helm/signing.asc | gpg --dearmor | sudo tee /usr/share/keyrings/helm.gpg > /dev/null
+sudo apt-get install apt-transport-https --yes
+echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/helm.gpg] https://baltocdn.com/helm/stable/debian/ all main" | sudo tee /etc/apt/sources.list.d/helm-stable-debian.list
+sudo apt-get update
+sudo apt-get install helm
+```
+
+## Important Helm Commands
+
+- `helm create [CHART]`: Scaffold a new Helm chart.
+- `helm package [CHART]`: Package the chart into a chart archive.
+- `helm install [NAME] [CHART]`: Install a Helm chart.
+- `helm upgrade [NAME] [CHART]`: Upgrade an installed Helm chart.
+- `helm uninstall [NAME]`: Uninstall an installed Helm chart.
+- `helm list`: List all installed Helm charts.
+- `helm rollback [NAME] [REVISION]`: Roll back a release to a specific revision.
