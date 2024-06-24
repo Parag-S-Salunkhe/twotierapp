@@ -28,6 +28,7 @@ Configuration: Helm allows you to configure charts through a values.yaml file, w
 Installation and Upgrades: Helm simplifies the installation and upgrading of Kubernetes applications. With a single command, Helm can install or upgrade an application, handling the underlying Kubernetes resources automatically.
 
 Rollbacks: Helm supports rollbacks to previous versions of a release, making it easier to recover from failed deployments.
+
 -------------------------------------------------------------------------
 **How Helm Works**
 Charts: Helm uses charts to define Kubernetes applications. Each chart contains a set of templates, a default values.yaml file, and other metadata.
