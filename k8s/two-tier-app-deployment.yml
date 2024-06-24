@@ -22,7 +22,7 @@ spec:
           image: parag2608/flaskapp:latest  # docker hub image that we pushed in part 1 will be pulled here from your hub repo
           env:                                  # environment variable we assigned
             - name: MYSQL_HOST
-              value: "10.110.91.236"
+              value: "10.110.91.236"   # change this ip , when you create sql service , run kubectl get svc and you will have sql service ip
             - name: MYSQL_USER
               value: "admin"
             - name: MYSQL_PASSWORD
