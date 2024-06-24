@@ -2,6 +2,7 @@
 
 **What is a Package Manager?**
 A package manager is a tool that automates the process of installing, upgrading, configuring, and removing software packages. These packages contain all the necessary files, metadata, and dependencies required for the software to function properly. Package managers simplify software management by handling the complex dependencies and configurations that can arise when multiple packages are installed on a system.
+
 ------------------------------------------------------------------------
 **Examples of Package Managers**
 APT (Advanced Package Tool): Used in Debian-based systems like Ubuntu.
@@ -9,9 +10,11 @@ Yum/DNF: Used in Red Hat-based systems like CentOS and Fedora.
 Homebrew: Used on macOS.
 npm: Used for JavaScript and Node.js applications.
 pip: Used for Python packages.
+
 ------------------------------------------------------------------------
 **Why is Helm Called a Package Manager?**
 Helm is called a package manager for Kubernetes because it performs similar functions to traditional package managers but for Kubernetes applications. It manages Kubernetes resources through a concept called "charts," which are packages of pre-configured Kubernetes resources.
+
 ------------------------------------------------------------------------
 **Key Features of Helm**
 Packaging: Helm packages Kubernetes resources into charts. A chart is a collection of files that describe a related set of Kubernetes resources.
