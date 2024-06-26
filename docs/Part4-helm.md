@@ -69,3 +69,32 @@ sudo apt-get install helm
 - `helm uninstall [NAME]`: Uninstall an installed Helm chart.
 - `helm list`: List all installed Helm charts.
 - `helm rollback [NAME] [REVISION]`: Roll back a release to a specific revision.
+
+---------------------------------------------------------------------------------------
+## Implementing helm
+By default helm creates nginx tempelate, which has 2 folders and 2 files (one package). for this project we will work on values.yml and in template folder we create the deployment in template. We will make a package of sql and flask app.
+
+```
+heml create name-chart
+```
+as we don't want to hardcode the values of the environments, we will use values.yml to inject them into deployment.yml of service, this helps us change database and password from values file making the app more secure.
+
+follow [sequel chart](https://github.com/Parag-S-Salunkhe/twotierapp/tree/helm/mysql-chart)
+
+afer the charts are ready we package them for installation
+
+```
+helm package chart-name
+helm install chartname ./mysql-chart
+helm list
+helm unistall chart name ## if you need to uninstall
+kubectl get all ## gets all pods, services, deployments
+```
+
+create chart for flask app, follow [flask-chart](https://github.com/Parag-S-Salunkhe/twotierapp/tree/helm/flask-app-chart)
+
+package it and install.
+
+```
+helm template chartname  ## to see all the injections
+```
