@@ -85,3 +85,6 @@ kubectl vs eksctl:
 kubectl: Use kubectl for interacting with Kubernetes clusters in general, including EKS, to manage pods, deployments, services, etc.
 
 eksctl: Use eksctl for managing the lifecycle of your EKS clusters, including creating, updating, deleting clusters, managing node groups, and configuring cluster settings.
+
+---------------------------------------------
+for much better handson deploy the app using helm
