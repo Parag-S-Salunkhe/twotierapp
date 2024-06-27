@@ -55,13 +55,33 @@ there are 2 option for running workloads on eks - fargate (serverless) and curre
 ## Manifest files
 manifest file for eks are almsot same as part 3. but we remove pod, pv and pvc. 
 As ebs is attached to the instance we dont need to attach any new pv and pvc.
+We are creating Configmap- which will be used to create fatabase and table, during deployment itself
+We also create a secret yaml file to inject password into the app so it is not hard coded
+use base 64 to encrypt you password. its basic but ok for sql
+```
+echo -n "password" | base64
+```
+follow [eks manifes](https://github.com/Parag-S-Salunkhe/twotierapp/tree/main/eks-manifest) for explanation of manifests 
+
+other changes are to the app deployment file and app service file, where the service type will be LoadBalancer and not NodePort
 
 ----------------------------------------------------------
-Worker Node and Master Node in EKS:
+Deleteing the cluster
+```
+eksctl delete cluster --name cluster-name --region eu-west-1
+```
+-------------------------------------------------------
+## Notes
+
+**Worker Node and Master Node in EKS:**
 
 Worker Nodes: You can view worker nodes using kubectl get nodes. These are EC2 instances managed by EKS to run your applications.
+
 Master Node: EKS is a managed service, so you don't have direct access to the master nodes. AWS manages the control plane (master nodes) for you.
 kubectl vs eksctl:
 
+**Using kubectl vs eksctl**
+
 kubectl: Use kubectl for interacting with Kubernetes clusters in general, including EKS, to manage pods, deployments, services, etc.
+
 eksctl: Use eksctl for managing the lifecycle of your EKS clusters, including creating, updating, deleting clusters, managing node groups, and configuring cluster settings.
