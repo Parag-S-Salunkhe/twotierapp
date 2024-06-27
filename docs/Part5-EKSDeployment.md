@@ -40,7 +40,11 @@ sudo mv /tmp/eksctl /usr/local/bin
 eksctl version
 ```
 This instance is not part of the eks cluster, it is acting like the kubectl or management node.
+
 ----------------------------------------------------------
+
+![eks_architecture](https://github.com/Parag-S-Salunkhe/twotierapp/assets/45193125/279261bc-e2be-4a31-9cce-22ee5b5fad5c)
+
 ## Launch EKS cluster
 
 It will take 10 to 15 minutes to launch the instance
