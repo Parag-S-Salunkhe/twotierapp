@@ -42,4 +42,16 @@ git status
 git push
 ```
 
-changing the branch and merging we will see ahead
+changing the branch and merging
+
+```
+git branch ## see on which branch you are
+git checkout -b new-brach   ## new branch will be created and ready to push to new branch
+git merge new branch ## be on main branch to merge the new branch with main
+```
+
+always remember to fetch or pull ## see difference in fetch and pull
+```
+git pull origin main
+git fetch origin   ## both have different use cases
+```
