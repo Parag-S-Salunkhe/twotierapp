@@ -23,4 +23,4 @@ Using git to push every part after completion will be very helpful for github co
 
 Please Note: There will be a minimal cost of $2-10 for EC2 usage, as we will need at least a t2.medium instance. stop the instances once your daily hands on is done, terminate on finishing the project.
 
-We will learn about 
+
